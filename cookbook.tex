@@ -1,0 +1,813 @@
+\documentclass[a4paper,12pt]{scrreprt}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{soul}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{enumitem}
+\usepackage{braids}
+\usepackage{epigraph}
+\usepackage{biblatex}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+
+% new page every section
+\newcommand{\sectionbreak}{\clearpage}
+
+%bibliography location
+\addbibresource{/home/angus/latex/notes-private/recipes/bibliography.bib}
+
+% Set up hyperref colors
+\hypersetup{colorlinks,
+  linkcolor={blue!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+
+% Makes indentation more note-ish
+\setlength{\parindent}{0em}
+\setlength{\parskip}{.5em}
+\setlength{\headheight}{14.0pt}
+
+% Page headers
+\pagestyle{fancy}
+\lhead{Angus Rush}
+\chead{My recipes}
+\rhead{\today}
+
+% My commands
+\newcommand{\pder}[2]{\frac{\partial{} #1}{\partial{} #2}}
+\newcommand{\tder}[2]{\frac{\text{d} #1}{\text{d} #2}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dd}{\text{d}}
+\newcommand{\Mod}[1]{\(\text{mod}#1\)}
+\newcommand{\defn}[1]{\ul{#1}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+% Second level of list uses empty bullets
+\renewcommand{\labelitemii}{$\circ$}
+
+% Declare theorem styles
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{counterexample}{Counterexample}[section]
+\newtheorem{tip}{Tip}[section]
+\newtheorem*{ingredients}{Ingredients}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{remark}
+\newtheorem{claim}{Claim}[section]
+\newtheorem{recipe}{Recipe}[section]
+\newtheorem{note}{Note}[section]
+\newtheorem{notation}{Notation}[section]
+\newtheorem{joke}{Joke}[section]
+
+\newenvironment{directions}{\textit{Directions}.}
+
+\title{My recipes}
+\author{Angus Rush}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Introduction}
+It should go without saying that pretty much every recipe here will contain salt and pepper. I won't list them in the ingredients unless the optimal amounts are unintuitive.
+
+\section{General information}\label{sec:general_information}
+
+\begin{tabular}{cc}
+  Food & Safe internal temperature \\
+  \midrule
+  Chicken & $75^{\circ}$C \\
+  Egg & $65^{\circ}$C
+\end{tabular}
+
+\chapter{Salad}
+\section{Caesar salad dressing}
+From~\cite{seriouseatscaesarsalad}.
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 3 Tbsp + $\frac{1}{2}$ cup EVOO
+
+      \item 2 medium cloves garlic, minced as finely as possible
+
+      \item 1 oz Parmesan, finely grated
+
+      \item 1 egg yolk
+
+      \item 1 Tbsp juice from 1 lemon
+
+      \item 5 anchovies, as finely minced as possible
+
+      \item 1 tsp Worcestershire sauce
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  $\,$
+  \begin{enumerate}
+    \item Add egg yolk, lemon juice, anchovies, Worcestershire sauce, garlic, and Parmesan to a bowl, and whisk together. Whisking constantly, drizzle in EVOO\@. Salt and pepper to taste.
+  \end{enumerate}
+\end{directions}
+
+\section{Tabbouleh}
+From~\cite{seriouseatstabbouleh}.
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item $\frac{3}{4}$ lb (about 340g) ripe plum tomatoes, finely diced
+
+      \item 2 cups finely chopped flat-leaf parsley
+
+      \item $\frac{1}{4}$ cup dry bulgur wheat
+
+      \item 1 cup finely chopped mint leaves
+
+      \item 2 spring onions, finely chopped
+
+      \item 5 Tbsp EVOO
+
+      \item 2 Tbsp fresh squeezed lemon juice
+
+      \item $\frac{1}{4}$ tsp ground coriander seed, and a pinch ground cinnamon
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  $\,$
+  \begin{enumerate}
+    \item Add tomatoes, together with 1 tsp of salt, to a strainer suspended over a bowl. Let drain for around 20 minutes, until about $\frac{1}{4}$ cup of liquid has collected in the bowl.
+
+    \item Add parsley, together with 1 tsp of salt, to a second bowl, and let sit for 20 minutes. Blot with paper towels to dry.
+
+    \item Boil $\frac{1}{2}$ cup of accumulated tomato juice, and add to the bulgur. Cover and let set approximately 30 minutes, until the bulgur has absorbed the tomato juice and become tender. Drail excess liquid.
+
+    \item Combine
+      \begin{itemize}
+        \item tomatoes
+
+        \item parsley
+
+        \item mint
+
+        \item bulgur
+
+        \item scallions
+
+        \item olive oil
+
+        \item lemon juice
+
+        \item coriander seed and cinnamon
+      \end{itemize}
+      and season.
+  \end{enumerate}
+\end{directions}
+\chapter{Sandwiches}
+\section{Tuna melt}
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 can tuna
+
+      \item 2 Tbsp mayonnaise
+
+      \item $\frac{2}{3}$ tsp smoked paprika
+
+      \item $\frac{1}{3}$ tsp cayenne pepper
+
+      \item 1 dash Worcestershire sauce
+
+      \item 2 slices of good bread, about 1 inch thick
+
+      \item $\frac{1}{2}$ cup grated cheddar
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  $\,$
+  \begin{enumerate}
+    \item Pre-heat oven to $325^{\circ}$ F.
+
+    \item In a bowl, lightly mix tuna, mayonnaise, smoked paprika, cayenne, and Worcestershire sauce. Salt and pepper to taste. Leave medium-sized lumps of un-broken-up tuna---don't over-mix!
+
+    \item Spoon on top of sliced bread and spread even. Cover with grated cheddar, and sprinkle over a shake of paprika for appearance.
+
+    \item Bake for about 7 minutes, until cheese is melted.
+  \end{enumerate}
+\end{directions}
+\chapter{Pasta}
+Some general tips.
+\begin{tip}\label{tip:starchypastawater}
+  When you boil pasta, don't throw away the water. It's full of starch, and a great way to make oil-based or oil-heavy sauces cling to pasta when boiled down a bit.
+\end{tip}
+
+\section{Spaghetti all'arrabiatta}
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 medium clove of garlic
+
+      \item $\frac{1}{2}$ cup EVOO
+
+      \item Roughly 1 tsp red pepper flakes
+
+      \item 1 can tomatoes, broken up by hand
+
+      \item 1 large serving of pasta
+
+      \item A few springs parsley, chopped, plus more to garnish
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item In a large skillet, cook garlic and red pepper flakes in EVOO over medium low heat until lightly golden.
+
+    \item When garlic is finished, start cooking pasta and stir in tomatoes to saucepan. Bring to a simmer.
+      
+    \item When pasta is cooked, transfer it to skillet. Turn heat to medium and cook an additional minute. Serve, garnishing with a glug of fresh olive oil.
+  \end{enumerate}
+\end{directions}
+
+\section{Spaghetti aglio e olio}
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 4 medium cloves of garlic, thinly sliced
+
+      \item 1 large serving of pasta
+
+      \item $\frac{1}{2}$ cup EVOO
+
+      \item red pepper flakes
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item In a large skillet, cook garlic and red pepper flakes in EVOO over medium low heat until lightly golden.
+
+    \item Meanwhile, cook pasta in a small amount of water. Salt water fairly heavily.
+
+    \item When garlic is cooked, transfer pasta and about $\frac{1}{2}$ cup of starchy water to skillet. Turn heat to high and toss rapidly to emulsify the starchy water and oil. Serve, garnishing with a glug of fresh olive oil.
+  \end{enumerate}
+\end{directions}
+
+\section{Penne with blue cheese and mushrooms}
+\begin{ingredients}
+  \leavevmode
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 glug EVOO
+
+      \item 1 knob butter (optional)
+
+      \item 1 container of mushrooms (ideally shiitake, but chestnut works too), sliced into thin strips
+
+      \item 1 medium onion, thinly sliced
+
+      \item One serving  fusili, penne, or similar
+
+      \item 75g of blue cheese such as Farmhouse Blue
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Saute mushrooms with EVOO, butter, and coarsely ground black pepper on medium-high heat until they release their juices and begin to brown. Add onions and more pepper, and saut\'{e} until golden brown.
+
+    \item Meanwhile, boil penne in salted water. When just shy of al dente, drain and add to onions and mushrooms, along with about 1 cup of the starchy water. Add blue cheese and stir vigorously to dissolve in the starchy water, then reduce until a creamy sauce is formed. Season with lots of pepper.
+  \end{enumerate}
+\end{directions}
+
+\section{Puttanesca}From~\cite{seriouseatsputtanesca}.
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 handful spaghetti
+
+      \item 6 Tbsp EVOO
+
+      \item 4 medium cloves garlic, thinly sliced
+
+      \item 4--6 anchovies, minced
+
+      \item red pepper flakes
+
+      \item 1/4 cup capers, minced
+
+      \item 1/4 cup sliced black olives
+
+      \item 1 can peeled tomatoes
+
+      \item 1 oz Parmesan cheeese, finely grated
+
+      \item Parsley (optional)
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  $\,$
+  \begin{enumerate}
+    \item Boil pasta in as small an amount of water as possible\footnote{This concentrates the starch from the pasta, see \hyperref[tip:starchypastawater]{Tip~\ref*{tip:starchypastawater}}. There's a \emph{ton\/} of olive oil in this sauce.} with a pinch of salt
+
+    \item Simultaneously, cook anchovies and garlic in EVOO over medium heat until garlic is lightly golden, then add capers and olives. Add tomatoes and simmer lightly.
+
+    \item When pasta is slightly undercooked, add it, along with some pasta water, to the sauce. Cook, stirring, until past is done.
+
+    \item Serve with parsley, EVOO, and Parmesan to garnish.
+  \end{enumerate}
+\end{directions}
+
+\section{Pasta con le sarde}From~\cite{foodwishespastaconlesarde}
+  \begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 handful spaghetti
+
+      \item $\frac{1}{4}$ cup evoo
+
+      \item 1 cup yellow onion, finely diced
+
+      \item 1 cup fennel bulb, finely diced
+
+      \item 2--3 medium cloves garlic, thinly sliced
+
+      \item 1 anchovy fillet
+
+      \item $\frac{1}{4}$ cup golden raisins
+
+      \item Small pinch saffron
+
+      \item $\frac{1}{4}$ cup wine
+
+      \item 8 oz sardines (2 tins)
+
+      \item $\frac{1}{4}$ cup toasted pine nuts
+
+      \item Toasted breadcrumbs to garnish
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  $\,$
+  \begin{enumerate}
+    \item Boil pasta water
+
+    \item Saut\'{e} onion, fennel, and red chili flakes in EVOO on medium heat with a generous pinch of salt until soft, about 10 minutes.
+
+    \item Add anchovy, garlic, and golden raisins, and cook about 1 minute, then add wine and saffron, and reduce until wine has almost evaporated. Add about $\frac{1}{2}$ cup of boiling water and pine nuts.
+
+    \item Cook pasta until just shy of al dente. Add sardines and break up, then stir in pasta.
+  \end{enumerate}
+\end{directions}
+
+\section{Pasta Al Limone}
+From~\cite{seriouseatspastaallimone}.
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 5 Tbsp unsalted butter
+
+      \item 1 medium lemon's worth of zest, plus juice
+
+      \item 1 medium clove garlic, minced
+
+      \item 2 handfuls
+
+      \item 1 oz. Parmesan cheese, finely grated
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  $\,$
+  \begin{enumerate}
+    \item Melt butter in medium skillet over medium heat. Add lemon zest when butter begins to foam, cook 1--2 minutes, then remove from heat.
+
+    \item Meanwhile, in a small amount of water, cook pasta with salt until not quite al dente.
+
+    \item Add pasta and about 1 cup of starchy water to butter/zest mixture and cook over medium high heat.
+
+    \item Add Parmesan and toss to combine. The pasta water, butter, and Parmesan should combine to create a creamy, emulsified sauce.
+
+    \item Season with salt, pepper, and lemon juice ($\sim 1$ Tbsp) to taste.
+
+    \item Serve, topping with more Parmesan and lemon zest.
+  \end{enumerate}
+\end{directions}
+
+\section{Spaghetti al tonno}
+From~\cite{foodwishesspaghettialtonno}.
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 2 Tbsp EVOO
+
+      \item 1 anchovy, chopped
+
+      \item 2 Tbsp capers, chopped
+
+      \item 3 medium cloves garlic, minced
+
+      \item $\frac{1}{2}$ cup dry white wime
+
+      \item 1 can peeled tomatoes
+
+      \item red pepper flakes
+
+      \item $\frac{1}{4}$ tsp dried oregano
+
+      \item 1 can tuna, drained
+
+      \item $\frac{1}{4}$ cup chopped italian parsley
+
+      \item large handful (12 oz) spaghetti
+
+      \item Parmesan cheese
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Boil pasta water.
+
+    \item On medium heat, cook anchovy, capers, and red chili flakes in EVOO until anchovies break down a bit and chili flakes infuse into oil, about 2 minutes. Then add garlic, let cook for about 1 minute.
+
+    \item Add wine, reduce by about $\frac{3}{4}$. Then add tomatoes and bring to a simmer. Add parsley and tuna, and season with salt and pepper.
+
+    \item Add pasta to boiling water with a pinch of salt. Cook until just shy of al dente, then strain and add to sauce.
+
+    \item Serve, garnishing with grated Parmesan, parsley, and EVOO\@.
+  \end{enumerate}
+\end{directions}
+
+\section{Spaghetti with meatballs}
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 tbsp EVOO
+
+      \item $\frac{1}{3}$ medium onion, very finely chopped
+
+      \item $\frac{1}{2}$ tsp red chili flakes
+
+      \item 3 medium cloves garlic
+
+      \item 1--2 Tbsp tomato paste
+
+      \item 1 can whole peeled tomatoes, crushed\footnote{Don't use canned crushed tomatoes. They are preserved with sodium citrate in order to keep the clumps of tomato intact, which isn't what we want here.}
+
+      \item 1 tsp dried basil
+
+      \item 1 tsp dried oregano
+
+      \item 1 pinch MSG (optional)
+
+      \item 2 meatballs from \hyperref[sec:meatballs_a_la_kurt]{Recipe~\ref*{sec:meatballs_a_la_kurt}}.
+
+      \item 1 large serving of pasta (about $\frac{2}{5}$ of a bag/box)
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Saut\'{e} onion and chili flakes on medium low heat with around 1 Tbsp of salt until onion is browned and softened, about 7 minutes. Add garlic and saut\'{e} for about 2 additional minutes until the raw smell is gone, then turn up the heat to meduim high and add tomato paste. Cook about 5 minutes, then add tomatoes. Add basil, oregano, MSG and season with salt and pepper. Add meatballs if frozen and simmer for 10--20 minutes, depending on the canned tomatoes. Add almost cooked pasta and serve.
+  \end{enumerate}
+\end{directions}
+
+\section{Pasta with butternut squash}
+From~\cite{foodwishesbutternutsquashpasta}.
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 2 Tbsp EVOO
+
+      \item 1 pound butternut squash (about $\frac{1}{2}$ large squash), cut into 1cm cubes
+
+      \item 2 Tbsp unsalted butter
+
+      \item 1 small shallot, finely minced
+
+      \item 1 handful sage leaves or $\approx 1$ Tbsp dried sage if necessary
+
+      \item 1 Tbsp juice from 1 lemon
+
+      \item 1 lb pasta (ideally orecchiette)
+
+      \item 1 oz Parmesan, finely grated
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Heat olive oil in large stainless steel skillet until barely smoking, then add squash. Season with salt and pepper. Cook until well-browned and squash is tender, about 5 minutes. Add butter and shallots and cook until butter is lightly browned and shallots are translucent, about 2 minutes. Add sage and stir in. Remove from heat and stir in lemon juice. Set aside.
+
+    \item Cook pasta in a small amount of water with a pinch of salt until just shy of al dente. Drain pasta. Reserve starchy water.
+
+    \item Add pasta and some starchy water to skillet and bring to a simmer over high heat. Cook until pasta is al dente, stirring and adding water as necessary. Remove from heat and stir in Parmesan and season with salt and pepper. Plate, garnish with more Parmesan, and serve.
+  \end{enumerate}
+\end{directions}
+
+\section{Ricotta gnocchi}
+\begin{ingredients}
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 340g Ricotta
+
+      \item 30g grated parmesan
+
+      \item 120g flour, plus some extra
+
+      \item 1 whole egg plus 1 yolk
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item In a
+  \end{enumerate}
+\end{directions}
+
+\chapter{Miscellaneous}
+
+\section{Shakshuka}\label{sec:shakshuka}
+
+Adapted from~\cite{seriouseatsshakshuka}.
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 3 Tbsp EVOO
+
+      \item 1--2 medium onion, sliced
+
+      \item 2 red/orange/yellow bell pepper, sliced
+
+      \item 2--3 cloves garlic, thinly sliced
+
+      \item 1$\frac{1}{2}$ Tbsp paprika (smoked or not, preferrably a mixture)
+
+      \item 2 tsp Cumin
+
+      \item $\frac{1}{2}$ tsp turmeric
+
+      \item 1 can tomatoes
+
+      \item parsley
+
+      \item 2 eggs
+
+      \item olives, feta, artichoke hearts
+
+      \item Good bread
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Heat EVOO over high heat in a deep skillet until almost smoking, then add onions and peppers and cook, not stirring, until lightly charred. Stir and repeat a few more times, until well-cooked
+
+    \item Add garlic and cook $\sim$1 minute, until fragrant. Add spices (and more EVOO if dry) and cook about one minute, till infused into oil. Then add tomatoes and reduce heat to a bare simmer.
+
+    \item Add some parsley and season with salt and pepper.
+
+    \item Break as many eggs you want (generally 2--4) on top, cover skillet, and simmer until cooked (internal temp. $63^{\circ}$C minimum.)
+
+    \item Top with remaining parsley and olives, feta, and artichoke hearts.
+  \end{enumerate}
+\end{directions}
+
+
+\section{Sausage, peppers, and onions}
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 6 sausages
+
+      \item 3 onions, chopped into $\sim$2cm squares
+
+      \item 3 bell peppers, chopped into $\sim$2cm squares
+
+      \item 1 Tbsp EVOO
+
+      \item 1 Tbsp Herbes de Provence
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Brown sausages in saut\'{e} pan over high heat. Remove and cut into bite-sized pieces
+
+    \item Turn heat to medium-high and add EVOO, peppers and onions. Cook until well-browned, then add Herbes de Provence and sausage.
+  \end{enumerate}
+\end{directions}
+
+\section{Colcannon Hash}
+\begin{ingredients}
+  $\,$
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item Bacon, cubed
+
+      \item About 3 large potates, cut into 1cm chunks
+
+      \item $\frac{1}{2}$ cup of green onions, thinly sliced (mostly the white and light green parts)
+
+      \item
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item
+  \end{enumerate}
+\end{directions}
+
+\section{Meatballs \`a la Kurt}\label{sec:meatballs_a_la_kurt}
+\begin{ingredients}
+  $\,$
+
+  For the meatballs:
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 500g ground beef
+
+      \item 500g ground pork
+
+      \item 1--2 eggs
+
+      \item 5--6 springs thyme, picked clean
+
+      \item 1 shallot, finely minced
+
+      \item 3 cloves garlic, finely minced
+
+      \item 1--2 tsp salt, plus some pepper
+
+      \item Breadcrumbs, or ideally, a few pieces of bread soaked in water and squeezed out.
+    \end{itemize}
+  \end{multicols}
+  For the `sauce':
+  \begin{multicols}{2}
+
+    \begin{itemize}
+      \item A few more cloves of garlic and some whole star anise (optional)
+
+      \item 2 red, orange, or yellow bell peppers, sliced into 5mm thick strips
+
+      \item 3 onions, halved and sliced into 5mm thick strips
+
+      \item A few handfuls of spinach
+    \end{itemize}
+  \end{multicols}
+  For the rice:
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item As much risotto rice as is necessary, $\frac{1}{2}$ cup per serving
+
+      \item A knob of butter
+
+      \item $\frac{1}{4}$ tsp turmeric per $\frac{1}{2}$ cup rice
+
+      \item Salt and pepper to taste
+
+      \item A few handfuls of spinach
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Mix all meatball ingredients together, cover, and let sit in refrigerator for 30 minutes.
+
+    \item On low heat, put (optionally) a few cloves of garlic and the star anise into a heavy skillet with some olive oil, and let them infuse into the oil
+
+    \item Form large meatballs, remove garlic and star anise from skillet, and sear on at least two sides until dark brown. Then add bell peppers, onions, and salt to draw out moisture. Lower heat to medium, and let simmer until the peppers and onions have broken down. Add spinach and let wilt, season with salt and pepper.
+
+    \item Meanwhile, melt butter in saucepan and add rice, turmeric, and salt and pepper. Cook until rice becomes slightly translucent, then slowly add water, maintaining a thick consistency.
+  \end{enumerate}
+\end{directions}
+
+\section{Mushroom rag\`{u}}\label{sec:mushroom_ragu}
+
+From \cite{seriouseatsmushroomragu}
+
+\begin{ingredients}
+  $\,$
+
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 oz (about 30g) dried porcini mushrooms
+
+      \item 3.5 lb (about 1.6 kg) assorted fresh mushrooms, thinly sliced
+
+      \item 4 Tbsp EVOO
+
+      \item 2 medium onions, minced
+
+      \item 1 large carrot, minced
+
+      \item 15 cloves garlic, minced
+
+      \item 1 cup dry white wine
+
+      \item 1 can whole tomatoes
+
+      \item 4 sprigs thyme
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item In a bowl, combine porcini mushrooms with 2 cups boiling water and let sit for 15 minutes. Drain, squeeze mushrooms dry, and slice, reserving mushroomy water.
+
+    \item In an enormous pot, cook onion, carrot, and garlic with EVOO over high heat until soft, about 6 minutes. Then add add fresh and soaked mushrooms and cook everything until mushrooms are sticking to the bottom of the pot and threatening to burn; this can take close to half an hour. The darker they get, the better, but if they burn you have to start over. Deglaze with wine and mushroom liquid, then add tomatoes and thyme.
+
+    \item Lower heat to medium low and cook for 1-2 hours, stirring occasionally.
+  \end{enumerate}
+\end{directions}
+
+\section{Beef, beer, and bean chili}\label{sec:beef_beer_and_bean_chili}
+From \cite{foodwishesbeefbeanbeerchili}
+\begin{ingredients}
+  $\,$
+
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item 1 Tbsp vegetable oil
+
+      \item 1 diced onion
+
+      \item 1 diced green pepper
+
+      \item 2 lb ground beef
+
+      \item 1 tsp ground black pepper
+
+      \item 3 Tbsp chili powder
+
+      \item 1 Tbsp ground cumin
+
+      \item $\frac{1}{8}$ tsp ground cinnamon
+
+      \item 2 tsp paprika
+
+      \item 1 tsp unsweetend cocoa powder
+
+      \item $\frac{1}{4}$ tsp dried oregano
+
+      \item $\frac{1}{4}$ tsp dried cayenne
+
+      \item 3 cloves garlic, minced
+
+      \item 1 bottle good beer such as a dark ale
+
+      \item 1 can crushed tomatoes
+
+      \item 1 can chicken stock
+
+      \item 2 cans pinto beans, rinced well
+    \end{itemize}
+  \end{multicols}
+\end{ingredients}
+\begin{directions}
+  \begin{enumerate}
+    \item Add onion, green pepper, and beef to large pot along with salt. Cook stirring over high heat until liquid evaporates and meat is well browned and beginning to form a fond, about 10 minutes. Turn down heat to medium and add black pepper, chili powder, cumin, cinnamon, paprika, and garlic. Cook about 4 minutes, until fond is threatening to burn, then deglaze with beer. Reduce by about $50\%$, then add tomatoes and stock. Simmer for 30-45 minutes, add beans and green pepper, and simmer another 30 minutes. Skim off fat if it's there.
+  \end{enumerate}
+\end{directions}
+
+
+%%fakechapter Bibliography
+\printbibliography{}
+
+\end{document}
