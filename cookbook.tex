@@ -13,6 +13,7 @@
 \usepackage{biblatex}
 \usepackage{multicol}
 \usepackage{booktabs}
+\usepackage{appendix}
 \usepackage{libertine}
 \usepackage[libertine]{newtxmath}
 
@@ -37,6 +38,7 @@
 % My commands
 \newcommand{\pder}[2]{\frac{\partial{} #1}{\partial{} #2}}
 \newcommand{\tder}[2]{\frac{\text{d} #1}{\text{d} #2}}
+\renewcommand{\d}{\mathrm{d}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -80,25 +82,42 @@
 \tableofcontents
 \chapter{Introduction}
 
+\section{What is this?}
+\label{sec:what_is_this}
+
+These are my personal notes.
+
 \section{General information}\label{sec:general_information}
 
-\begin{tabular}{cc}
-  Food & Safe internal temperature \\
-  \midrule
-  Chicken & $75^{\circ}$C \\
-  Egg & $65^{\circ}$C
-\end{tabular}
+%\begin{tabular}{cc}
+%  Food & Safe internal temperature \\
+%  \midrule
+%  Chicken & $75^{\circ}$C \\
+%  Egg & $65^{\circ}$C
+%\end{tabular}
+
+\subsection{When should I salt?}
+\label{ssc:when_salt}
+
+Many recipes involving, say, sweating down vegetables, call for salt to be added in the early stages of a recipe. This is not because one wants to begin seasoning the food early for some reason, but because salt draws water out of the cells of vegetables via osmosis.
+
+Osmosis is exemplified by the following process: two containers of water are separated by a membrane which allows water to pass through, and salt is added to one of the containers. If the membrane does not allow salt to pass through, then water will be drawn out of the contaier without salt into the container with salt with some pressure, known as \emph{osmotic pressure.}
+
+In the case of cooking, the two containers are the inside and outside of a cell, and the membrane is the cell wall. Salting vegetables in the pan causes an osmotic pressure gradient across the cell wall, drawing water out of the cells and into the pan.
+
+But what causes this osmotic pressure gradient? The short answer is that adding a solute to one of the containers increases the chemical potential in that container; it is then energetically favorable to to equalize the chemical potentials by diluting the solute. However, this is not very intuitive for those who, like the author, lack a deep understanding of thermodynamics, and who want an elementary (or at least intuitive) explanation. Many elementary incorrect or partially correct explanations exist in the literature. For a review of this, see \cite{whatisosmosis}. A more complete derivation, starting from Newton's laws, is given in \hyperref[ch:the_virial_theorem]{Appendix~\ref*{ch:the_virial_theorem}}. The main source is \cite{physicsofosmoticpressure}.
+
+There is a secondary effect of the addition of solutes such as salt or sugar to water: the boiling point of the water increases. This is of great importance in applications such as candy-making, where having great control over the temperature of sugar solutions becomes essential. This is due to a change in
 
 \subsection{Harshness in alliums}
 \label{ssc:harshness_in_alliums}
-
-This is the single greatest thing I've learned from the food lab. It's a game changer when you want to add raw garlic to stuff, but don't want the harsh taste.
 
 Plants in the genus \emph{allium,} such as onion, garlic, scallions, shallots, chives, etc., take sulferous compounds out of the earth and use them to create what Harold McGee calls \emph{ammunition compounds.} When the cell walls are broken, corresponding enzymes convert these ammunition compounds into harsh-tasting
 
 contain an enzyme called \emph{alliinase.} When the cell walls of these plants are broken, this enzyme reacts with
 
 Acid slows the reaction rate of alliinase into allicin. There appears to be conflicting information about whether allicin is itself responsible for the harsh-taste in garlic, or whether this comes from sulfur-containing compounds that the allicin decays into.
+
 
 \chapter{Salad}
 \section{Caesar salad dressing}
@@ -1156,6 +1175,46 @@ From \cite{foodwishesbeefbeanbeerchili}
     \item Stir in more lemon juice to taste
   \end{enumerate}
 \end{directions}
+
+\begin{appendices}
+  \chapter{Osmosis and the virial theorem}
+  \label{ch:the_virial_theorem}
+
+  In this appendix we derive the standard equation relating osmosis pressure to the concentration of solutes. This derivation comes, mutatis mutandis, from \cite{whatisosmosis}.
+
+  We consider a system of $N$ particles moving inside a fixed volume $V$ with position vectors $x_{i} \in \R^{3}$ and momentum vectors $p_{i} \in \R^{3}$. Consider the quantity
+  \begin{equation*}
+    Q = \sum_{i} x_{i} \cdot p_{i},
+  \end{equation*}
+  known as the \emph{virial.}
+  The time derivative of this quantity is
+  \begin{align}
+    \tder{Q}{t} &= \sum_{i} \dot{x}_{i} \cdot p_{i} + \sum_{i} x_{i} \cdot \dot{p}_{i} \\
+    \label{eq:derivative_of_virial}
+    &= 2 T + \sum_{i} \dot{x}_{i} \cdot F_{i},
+  \end{align}
+  where $T$ is the total kinetic energy of the system, and $F_{i}$ is the net force on the $i$th particle.
+
+  The particles are confined to some finite volume, so there exists some $L \in \R$ such that $\abs{x_{i}} < L$. If we make the reasonable simplifying assumption that the momenta of the particles are also bounded above by some constant $P$, then the virial is bounded above by some real number $Q_{\mathrm{max}} = NLP$; this is certainly a reasonable assumption if our particles are the molecules in a container of water sitting on a table. Then the time average of the time derivative of the virial at very large times is
+  \begin{align}
+    \lim_{\tau \to \infty} \left|\left\langle \tder{Q}{t} \right\rangle_{\tau}\right| &= \lim_{\tau \to \infty} \left| \frac{1}{\tau} \int_{0}^{\infty} \tder{Q}{t} \, \d \tau\right| \\
+    &= \lim_{\tau \to \infty} \left| \frac{Q(\tau) - Q(0)}{\tau} \right| \\
+    &\leq \lim_{\tau \to \infty} \left| \frac{Q_{\mathrm{max}}}{\tau} \right| \\
+    \label{eq:time_average_vanishes}
+    &= 0.
+  \end{align}
+
+  Taking the time average of \hyperref[eq:derivative_of_virial]{Equation~\ref*{eq:derivative_of_virial}} and using  yields the \emph{virial theorem:}
+  \begin{theorem}[virial theorem]
+    For a system of $N$ particles whose positions $x_{i}$ and momenta $p_{i}$ are bounded, at large times $\tau \gg 0$ we have the asymptotic relation
+    \begin{equation*}
+      0 = 2\langle T \rangle_{\tau} + \left\langle \sum_{i} \dot{x}_{i} \cdot F_{i}\right\rangle_{\tau}.
+    \end{equation*}
+  \end{theorem}
+\end{appendices}
+
+We continue our analysis by noting that the force $F_{i}$ has two contributions: one from the particles interactions with the walls of our volume $V$, and one from the
+
 
 %%fakechapter Bibliography
 \printbibliography{}
